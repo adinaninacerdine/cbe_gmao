@@ -1,4 +1,4 @@
-from odoo import models, fields, api
+from odoo import models, fields, api # type: ignore
 from datetime import datetime, timedelta
 
 class MaintenanceRequest(models.Model):
