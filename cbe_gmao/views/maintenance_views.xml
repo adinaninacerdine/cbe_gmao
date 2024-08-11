@@ -1,0 +1,31 @@
+<odoo>
+    <record id="view_maintenance_request_form_custom" model="ir.ui.view">
+        <field name="name">maintenance.request.form.custom</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.maintenance_request_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='stage']" position="after">
+                <group>
+                    <field name="is_due_for_maintenance"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                <page string="Consommables">
+                    <field name="x_studio_many2many_field_5rd_1i4p634uk" widget="many2many_tags"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_maintenance_request_tree_custom" model="ir.ui.view">
+        <field name="name">maintenance.request.tree.custom</field>
+        <field name="model">maintenance.request</field>
+        <field name="inherit_id" ref="maintenance.maintenance_request_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_due_for_maintenance"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
