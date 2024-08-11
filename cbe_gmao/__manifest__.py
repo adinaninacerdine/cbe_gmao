@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "my_module",
+    'name': "cbe_gmao",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Ectension du module maintenance""",
 
     'description': """
-        Long description of module's purpose
+        Ce module permet d'automatiser la sortie de stock des pieces de rechange lors de chaque opération de maintenance
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Green Relaods",
+    'website': "http://www.greenreloads.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/odoo/addons/base/module/module_data.xml
@@ -20,13 +19,13 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','maintenance', 'stock'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/maintenance_views.xml',
+        'data/ir_cron_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
